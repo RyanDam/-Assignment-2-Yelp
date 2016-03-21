@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol SettingSliderCellDelegate {
+protocol SettingSliderCellDelegate: NSObjectProtocol {
     func onSliderToggle(sender: SettingSliderCell, switcher: UISwitch)
 }
 
 class SettingSliderCell: UITableViewCell {
 
-    var delegate: SettingSliderCellDelegate?
+    weak var delegate: SettingSliderCellDelegate?
     
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var cellSlider: UISwitch!

@@ -14,12 +14,14 @@ enum CheckCellState {
     case Collapsed
 }
 
-protocol SettingCheckCellDelegate {
+protocol SettingCheckCellDelegate: NSObjectProtocol {
     func onIndicateTouched(sender: SettingCheckCell, currentMode: CheckCellState)
 }
 
 class SettingCheckCell: UITableViewCell {
 
+    weak var delegate: SettingCheckCellDelegate?
+    
     @IBOutlet weak var cellTitle: UILabel!
     @IBOutlet weak var cellImageIndicate: UIImageView!
     
